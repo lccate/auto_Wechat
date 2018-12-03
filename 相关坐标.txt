@@ -1,0 +1,77 @@
+“+”
+adb shell input tap 893 55
+ 
+
+“添加朋友”
+adb shell input tap 652 353
+
+定位输入栏
+adb shell input tap 39 275
+
+
+输入手机号
+adb shell input text 15206414696
+
+
+查找
+adb shell input tap 196 245
+
+
+设置备注和标签
+adb shell input tap 0 540
+
+删除原来的文本信息（只能删除5个字符）
+adb shell input keyevent 67
+adb shell input keyevent 67
+adb shell input keyevent 67
+adb shell input keyevent 67
+adb shell input keyevent 67
+
+输入姓名（中文名不行，身份证号或者英文名可以）
+adb shell input text 123
+
+保存
+adb shell input tap 914 55
+
+添加好友到通讯录
+adb shell input tap 39 1056
+
+
+发送
+adb shell input tap 914 55
+
+返回
+adb shell input keyevent 4
+
+adb shell input keyevent 4
+
+adb shell input keyevent 4
+
+以下命令反复循环:
+定位输入栏
+adb shell input tap 39 275
+
+输入手机号
+adb shell input text 15206414696
+
+查找
+adb shell input tap 196 245
+
+设置备注和标签
+adb shell input tap 0 540
+添加好友到通讯录
+adb shell input tap 39 1056
+
+发送
+adb shell input tap 914 55
+返回
+adb shell input keyevent 4
+
+adb shell input keyevent 4
+
+adb shell input keyevent 4
+
+
+
+
+
