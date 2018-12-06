@@ -24,7 +24,12 @@
 #### adb shell input tap 100 300
 ## 5.adb shell input text实现中文输入
 #### adb默认是无法输入中文的，感谢外国友人写了一个输入法，源码地址https://github.com/cccccate/ADBKeyBoard
-####
-####
-####
-####
+#### 首先下载ADBKeyboard.apk文件放到adb文件夹中，从cmd中进到adb文件输入以下命令安装此输入法
+···
+adb install ADBKeyBoard.apk
+···
+#### 然后在手机语言和输入法选项中，将默认输入法修改为ADB Keyboard
+#### 最后用adb命令输入中文测试ok
+···
+adb shell am broadcast -a ADB_INPUT_TEXT --es msg ‘你好，我是小刘'
+···
