@@ -18,6 +18,12 @@
 #### adb shell input keyevent 4
 #### //打开微信
 #### adb shell am start -n com.tencent.mm/.ui.LauncherUI
+#### 查看想要启动的app的入口  
+```
+adb shell dumpsys window windows | findstr "Current"
+```
+微信的启动入口是com.tencent.mm/.ui.LauncherUI  
+
 ## 4.获取页面坐标
 #### 这里推荐一个超级方便的方法！打开手机的指针功能，手指放在手机屏幕上时，会看到最上面一行有相关的坐标信息，有了这些坐标信息，我们就可以控制手机，想点哪里点哪里（注意！不同型号的手机坐标位置是不同的，我使用的是小米note）
 #### //模拟点击 100 300是坐标
@@ -25,14 +31,14 @@
 ## 5.adb shell input text实现中文输入
 #### adb默认是无法输入中文的，感谢外国友人写了一个输入法，源码地址https://github.com/cccccate/ADBKeyBoard
 #### 首先下载ADBKeyboard.apk文件放到adb文件夹中，从cmd中进到adb文件输入以下命令安装此输入法
-···
+```
 adb install ADBKeyBoard.apk
-···
+```
 #### 然后在手机语言和输入法选项中，将默认输入法修改为ADB Keyboard
 #### 最后用adb命令输入中文测试ok
-···
+```
 adb shell am broadcast -a ADB_INPUT_TEXT --es msg ‘你好，我是小刘'
-···
+```
 ## 出现的几个bug以及解决方法（demo_mi是最终版本）
 #### 有的好友不存在：不会影响进程，但是会触发其他的操作，对总体功能没有影响可以忽略
 #### 有的好友已经加过了：同上
